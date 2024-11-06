@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - Glassy Blog Template">
+  <div class="about-content">
+    <h1>About Glassy</h1>
+    <p class="intro">
+      Glassy is a cutting-edge blog template designed for creators who want to make a lasting impression. Our unique glassmorphism-inspired design combines style with functionality, providing an immersive reading experience for your audience.
+    </p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h2>My Mission</h2>
+        <p>To empower content creators with a visually stunning and highly functional platform that elevates their work and engages their audience.</p>
+      </div>
+      <div class="about-card">
+        <h2>About Me</h2>
+        <p>I'm a passionate solo developer dedicated to pushing the boundaries of web design and user experience. Every element in Glassy is crafted with purpose and attention to detail.</p>
+      </div>
+      <div class="about-card">
+        <h2>My Approach</h2>
+        <p>I believe in the power of minimalism and the impact of visual storytelling. Glassy is the result of countless hours of design iteration and coding to create the perfect canvas for your ideas.</p>
+      </div>
+      <div class="about-card">
+        <h2>Join Me</h2>
+        <p>Whether you're a blogger, photographer, or creative professional, Glassy provides the perfect canvas for your ideas. Start your journey with me today!</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--text-color), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .intro {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .about-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .about-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-purple);
+  }
+
+  .about-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

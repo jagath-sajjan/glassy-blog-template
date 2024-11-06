@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<Layout title="Glassy Blog">
+  <h1>Glassy Blog</h1>
+  <ul>
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        <p>{post.data.description}</p>
+        <p>Published on: {post.data.pubDate.toLocaleDateString()}</p>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  li:hover {
+    transform: translateY(-5px);
+  }
+
+  a {
+    font-size: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+</style>

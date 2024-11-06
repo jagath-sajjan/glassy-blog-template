@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Glassy - Modern Blog Template">
+  <div class="hero-content">
+    <div class="star-icon">✧</div>
+    <h1 class="glitch" data-text="MODERN BLOG TEMPLATE">MODERN BLOG TEMPLATE</h1>
+    <p class="subtitle">Create stunning content with our glass-morphism inspired design system</p>
+    <div class="cta-container">
+      <a href="/blog" class="cta-button primary">
+        EXPLORE BLOG
+        <span class="arrow">→</span>
+      </a>
+      <a href="/about" class="cta-button secondary">
+        LEARN MORE
+      </a>
+    </div>
+  </div>
+  <section class="features">
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Stunning Design</h3>
+        <p>Captivate your audience with our sleek, modern glassmorphism design.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Responsive Layout</h3>
+        <p>Enjoy a seamless experience across all devices and screen sizes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Optimized for speed to ensure quick load times and smooth navigation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔧</div>
+        <h3>Easy Customization</h3>
+        <p>Tailor the template to your needs with our flexible and modular design.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .features {
+    margin-top: 4rem;
+  }
+
+  .features h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--text-color), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 768px) {
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .hero-content {
+    text-align: left;
+    max-width: 800px;
+  }
+
+  .star-icon {
+    font-size: 2rem;
+    color: var(--accent-purple);
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+  }
+
+  .glitch {
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(10px, 9999px, 31px, 0);
+      transform: skew(0.6deg);
+    }
+    5% {
+      clip: rect(70px, 9999px, 71px, 0);
+      transform: skew(0.3deg);
+    }
+    10% {
+      clip: rect(29px, 9999px, 10px, 0);
+      transform: skew(0.7deg);
+    }
+    15% {
+      clip: rect(55px, 9999px, 14px, 0);
+      transform: skew(0.1deg);
+    }
+    20% {
+      clip: rect(90px, 9999px, 52px, 0);
+      transform: skew(0.9deg);
+    }
+    25% {
+      clip: rect(61px, 9999px, 59px, 0);
+      transform: skew(0.2deg);
+    }
+    30% {
+      clip: rect(82px, 9999px, 94px, 0);
+      transform: skew(0.5deg);
+    }
+    35% {
+      clip: rect(41px, 9999px, 72px, 0);
+      transform: skew(0.8deg);
+    }
+    40% {
+      clip: rect(56px, 9999px, 22px, 0);
+      transform: skew(0.4deg);
+    }
+    45% {
+      clip: rect(32px, 9999px, 90px, 0);
+      transform: skew(0.6deg);
+    }
+    50% {
+      clip: rect(19px, 9999px, 23px, 0);
+      transform: skew(0.3deg);
+    }
+    55% {
+      clip: rect(77px, 9999px, 63px, 0);
+      transform: skew(0.7deg);
+    }
+    60% {
+      clip: rect(84px, 9999px, 26px, 0);
+      transform: skew(0.1deg);
+    }
+    65% {
+      clip: rect(45px, 9999px, 16px, 0);
+      transform: skew(0.9deg);
+    }
+    70% {
+      clip: rect(39px, 9999px, 30px, 0);
+      transform: skew(0.2deg);
+    }
+    75% {
+      clip: rect(67px, 9999px, 92px, 0);
+      transform: skew(0.5deg);
+    }
+    80% {
+      clip: rect(24px, 9999px, 13px, 0);
+      transform: skew(0.8deg);
+    }
+    85% {
+      clip: rect(53px, 9999px, 25px, 0);
+      transform: skew(0.4deg);
+    }
+    90% {
+      clip: rect(11px, 9999px, 79px, 0);
+      transform: skew(0.6deg);
+    }
+    95% {
+      clip: rect(48px, 9999px, 36px, 0);
+      transform: skew(0.3deg);
+    }
+    100% {
+      clip: rect(62px, 9999px, 87px, 0);
+      transform: skew(0.7deg);
+    }
+  }
+
+  @keyframes glitch-anim2 {
+    0% {
+      clip: rect(65px, 9999px, 99px, 0);
+      transform: skew(0.8deg);
+    }
+    5% {
+      clip: rect(86px, 9999px, 31px, 0);
+      transform: skew(0.4deg);
+    }
+    10% {
+      clip: rect(23px, 9999px, 75px, 0);
+      transform: skew(0.9deg);
+    }
+    15% {
+      clip: rect(70px, 9999px, 68px, 0);
+      transform: skew(0.2deg);
+    }
+    20% {
+      clip: rect(41px, 9999px, 24px, 0);
+      transform: skew(0.6deg);
+    }
+    25% {
+      clip: rect(37px, 9999px, 90px, 0);
+      transform: skew(0.3deg);
+    }
+    30% {
+      clip: rect(18px, 9999px, 56px, 0);
+      transform: skew(0.7deg);
+    }
+    35% {
+      clip: rect(63px, 9999px, 27px, 0);
+      transform: skew(0.1deg);
+    }
+    40% {
+      clip: rect(40px, 9999px, 55px, 0);
+      transform: skew(0.9deg);
+    }
+    45% {
+      clip: rect(50px, 9999px, 71px, 0);
+      transform: skew(0.5deg);
+    }
+    50% {
+      clip: rect(82px, 9999px, 43px, 0);
+      transform: skew(0.2deg);
+    }
+    55% {
+      clip: rect(33px, 9999px, 17px, 0);
+      transform: skew(0.6deg);
+    }
+    60% {
+      clip: rect(76px, 9999px, 95px, 0);
+      transform: skew(0.4deg);
+    }
+    65% {
+      clip: rect(11px, 9999px, 83px, 0);
+      transform: skew(0.8deg);
+    }
+    70% {
+      clip: rect(54px, 9999px, 62px, 0);
+      transform: skew(0.3deg);
+    }
+    75% {
+      clip: rect(89px, 9999px, 14px, 0);
+      transform: skew(0.7deg);
+    }
+    80% {
+      clip: rect(29px, 9999px, 77px, 0);
+      transform: skew(0.1deg);
+    }
+    85% {
+      clip: rect(95px, 9999px, 38px, 0);
+      transform: skew(0.9deg);
+    }
+    90% {
+      clip: rect(22px, 9999px, 91px, 0);
+      transform: skew(0.5deg);
+    }
+    95% {
+      clip: rect(67px, 9999px, 20px, 0);
+      transform: skew(0.2deg);
+    }
+    100% {
+      clip: rect(44px, 9999px, 53px, 0);
+      transform: skew(0.6deg);
+    }
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .cta-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover::before {
+    transform: translateX(0);
+  }
+
+  .cta-button.primary {
+    background: var(--primary-purple);
+    color: var(--text-color);
+    border: none;
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--primary-purple);
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      text-align: center;
+    }
+
+    .glitch {
+      font-size: 2.5rem;
+    }
+
+    .cta-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
