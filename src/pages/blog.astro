@@ -7,47 +7,71 @@ const posts = await getCollection('blog');
 
 <Layout title="Glassy Blog">
   <h1>Glassy Blog</h1>
-  <ul>
+  <div class="blog-grid">
     {posts.map((post) => (
-      <li>
-        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-        <p>{post.data.description}</p>
-        <p>Published on: {post.data.pubDate.toLocaleDateString()}</p>
-      </li>
+      <a href={`/blog/${post.slug}`} class="blog-card">
+        <article>
+          <h2>{post.data.title}</h2>
+          <p class="description">{post.data.description}</p>
+          <p class="date">Published on: {post.data.pubDate.toLocaleDateString()}</p>
+        </article>
+      </a>
     ))}
-  </ul>
+  </div>
 </Layout>
 
 <style>
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--text-color), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
 
-  li {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  li:hover {
-    transform: translateY(-5px);
-  }
-
-  a {
-    font-size: 1.5rem;
-    color: #007bff;
+  .blog-card {
+    background: var(--glass-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid var(--glass-border);
   }
 
-  p {
-    margin: 0.5rem 0;
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .blog-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-purple);
+  }
+
+  .blog-card .description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+  }
+
+  .blog-card .date {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -5,8 +5,10 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title}>
   <article class="blog-post">
-    <h1>{frontmatter.title}</h1>
-    <p class="date">{new Date(frontmatter.date).toLocaleDateString()}</p>
+    <div class="post-header">
+      <h1>{frontmatter.title}</h1>
+      <p class="date">{new Date(frontmatter.date).toLocaleDateString()}</p>
+    </div>
     <div class="content">
       <slot />
     </div>
@@ -14,39 +16,54 @@ const { frontmatter } = Astro.props;
 </Layout>
 
 <style is:global>
+  :root {
+    --code-bg: #0f1624;
+    --code-border: rgba(255, 255, 255, 0.2);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+  }
+
   .blog-post {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
   }
 
+  .post-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
   .blog-post h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, var(--text-color), var(--accent-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.2;
   }
 
   .blog-post .date {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 2rem;
+    font-style: italic;
   }
 
   .blog-post .content {
     font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .blog-post pre {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 1rem;
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
     overflow-x: auto;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
+    border: 1px solid var(--code-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .blog-post code {
@@ -59,9 +76,76 @@ const { frontmatter } = Astro.props;
   }
 
   .blog-post p code {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--code-bg);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-size: 0.9rem;
+    border: 1px solid var(--code-border);
+  }
+
+  .blog-post h2 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+    color: var(--accent-purple);
+  }
+
+  .blog-post h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--accent-purple);
+  }
+
+  .blog-post ul, .blog-post ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .blog-post li {
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-post blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--accent-purple);
+    background: var(--glass-bg);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .blog-post img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 1px solid var(--glass-border);
+  }
+
+  .blog-post hr {
+    margin: 3rem 0;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--accent-purple),
+      transparent
+    );
+  }
+
+  @media (max-width: 768px) {
+    .blog-post {
+      padding: 1rem;
+    }
+
+    .blog-post h1 {
+      font-size: 2rem;
+    }
+
+    .blog-post h2 {
+      font-size: 1.5rem;
+    }
+
+    .blog-post h3 {
+      font-size: 1.25rem;
+    }
   }
 </style>

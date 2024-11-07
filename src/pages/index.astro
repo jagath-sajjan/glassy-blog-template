@@ -45,61 +45,11 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .features {
-    margin-top: 4rem;
-  }
-
-  .features h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    background: linear-gradient(45deg, var(--text-color), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .feature-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .feature-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .feature-card p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  @media (max-width: 768px) {
-    .feature-grid {
-      grid-template-columns: 1fr;
-    }
-  }
   .hero-content {
     text-align: left;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
   }
 
   .star-icon {
@@ -156,82 +106,6 @@ import Layout from '../layouts/Layout.astro';
       clip: rect(10px, 9999px, 31px, 0);
       transform: skew(0.6deg);
     }
-    5% {
-      clip: rect(70px, 9999px, 71px, 0);
-      transform: skew(0.3deg);
-    }
-    10% {
-      clip: rect(29px, 9999px, 10px, 0);
-      transform: skew(0.7deg);
-    }
-    15% {
-      clip: rect(55px, 9999px, 14px, 0);
-      transform: skew(0.1deg);
-    }
-    20% {
-      clip: rect(90px, 9999px, 52px, 0);
-      transform: skew(0.9deg);
-    }
-    25% {
-      clip: rect(61px, 9999px, 59px, 0);
-      transform: skew(0.2deg);
-    }
-    30% {
-      clip: rect(82px, 9999px, 94px, 0);
-      transform: skew(0.5deg);
-    }
-    35% {
-      clip: rect(41px, 9999px, 72px, 0);
-      transform: skew(0.8deg);
-    }
-    40% {
-      clip: rect(56px, 9999px, 22px, 0);
-      transform: skew(0.4deg);
-    }
-    45% {
-      clip: rect(32px, 9999px, 90px, 0);
-      transform: skew(0.6deg);
-    }
-    50% {
-      clip: rect(19px, 9999px, 23px, 0);
-      transform: skew(0.3deg);
-    }
-    55% {
-      clip: rect(77px, 9999px, 63px, 0);
-      transform: skew(0.7deg);
-    }
-    60% {
-      clip: rect(84px, 9999px, 26px, 0);
-      transform: skew(0.1deg);
-    }
-    65% {
-      clip: rect(45px, 9999px, 16px, 0);
-      transform: skew(0.9deg);
-    }
-    70% {
-      clip: rect(39px, 9999px, 30px, 0);
-      transform: skew(0.2deg);
-    }
-    75% {
-      clip: rect(67px, 9999px, 92px, 0);
-      transform: skew(0.5deg);
-    }
-    80% {
-      clip: rect(24px, 9999px, 13px, 0);
-      transform: skew(0.8deg);
-    }
-    85% {
-      clip: rect(53px, 9999px, 25px, 0);
-      transform: skew(0.4deg);
-    }
-    90% {
-      clip: rect(11px, 9999px, 79px, 0);
-      transform: skew(0.6deg);
-    }
-    95% {
-      clip: rect(48px, 9999px, 36px, 0);
-      transform: skew(0.3deg);
-    }
     100% {
       clip: rect(62px, 9999px, 87px, 0);
       transform: skew(0.7deg);
@@ -242,82 +116,6 @@ import Layout from '../layouts/Layout.astro';
     0% {
       clip: rect(65px, 9999px, 99px, 0);
       transform: skew(0.8deg);
-    }
-    5% {
-      clip: rect(86px, 9999px, 31px, 0);
-      transform: skew(0.4deg);
-    }
-    10% {
-      clip: rect(23px, 9999px, 75px, 0);
-      transform: skew(0.9deg);
-    }
-    15% {
-      clip: rect(70px, 9999px, 68px, 0);
-      transform: skew(0.2deg);
-    }
-    20% {
-      clip: rect(41px, 9999px, 24px, 0);
-      transform: skew(0.6deg);
-    }
-    25% {
-      clip: rect(37px, 9999px, 90px, 0);
-      transform: skew(0.3deg);
-    }
-    30% {
-      clip: rect(18px, 9999px, 56px, 0);
-      transform: skew(0.7deg);
-    }
-    35% {
-      clip: rect(63px, 9999px, 27px, 0);
-      transform: skew(0.1deg);
-    }
-    40% {
-      clip: rect(40px, 9999px, 55px, 0);
-      transform: skew(0.9deg);
-    }
-    45% {
-      clip: rect(50px, 9999px, 71px, 0);
-      transform: skew(0.5deg);
-    }
-    50% {
-      clip: rect(82px, 9999px, 43px, 0);
-      transform: skew(0.2deg);
-    }
-    55% {
-      clip: rect(33px, 9999px, 17px, 0);
-      transform: skew(0.6deg);
-    }
-    60% {
-      clip: rect(76px, 9999px, 95px, 0);
-      transform: skew(0.4deg);
-    }
-    65% {
-      clip: rect(11px, 9999px, 83px, 0);
-      transform: skew(0.8deg);
-    }
-    70% {
-      clip: rect(54px, 9999px, 62px, 0);
-      transform: skew(0.3deg);
-    }
-    75% {
-      clip: rect(89px, 9999px, 14px, 0);
-      transform: skew(0.7deg);
-    }
-    80% {
-      clip: rect(29px, 9999px, 77px, 0);
-      transform: skew(0.1deg);
-    }
-    85% {
-      clip: rect(95px, 9999px, 38px, 0);
-      transform: skew(0.9deg);
-    }
-    90% {
-      clip: rect(22px, 9999px, 91px, 0);
-      transform: skew(0.5deg);
-    }
-    95% {
-      clip: rect(67px, 9999px, 20px, 0);
-      transform: skew(0.2deg);
     }
     100% {
       clip: rect(44px, 9999px, 53px, 0);
@@ -387,6 +185,53 @@ import Layout from '../layouts/Layout.astro';
     transform: translateX(4px);
   }
 
+  .features {
+    margin-top: 4rem;
+  }
+
+  .features h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--text-color), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
   @media (max-width: 768px) {
     .hero-content {
       text-align: center;
@@ -404,6 +249,10 @@ import Layout from '../layouts/Layout.astro';
     .cta-button {
       width: 100%;
       justify-content: center;
+    }
+
+    .feature-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
